@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>My Portfolio | GitHub Pages</title>
     <style>
+        /* General Layout */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -14,37 +15,111 @@
             padding: 2rem;
             background-color: #f6f8fa;
         }
+
         header {
             text-align: center;
             padding: 3rem 0;
         }
+
+        h1 { color: #24292f; margin-bottom: 0.5rem; }
+        h2 { color: #24292f; border-bottom: 1px solid #d0d7de; padding-bottom: 0.5rem; }
+
         section {
             background: white;
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
-        h1 { color: #24292f; }
+
+        /* YouTube Short Container (9:16 Ratio) */
+        .short-container {
+            max-width: 280px; /* Limits width for vertical video */
+            margin: 1.5rem auto; /* Centers the video */
+            position: relative;
+            padding-bottom: 177.77%; /* The secret sauce for 9:16 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .short-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            margin-top: 2rem;
+            padding: 2rem;
+            border: 2px dashed #d0d7de;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+
+        .coming-soon h3 {
+            margin-top: 0;
+            color: #8c959f;
+            font-weight: 500;
+        }
+
+        .coming-soon p {
+            color: #6e7781;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Links */
         a { color: #0969da; text-decoration: none; }
-        a:hover { text-underline-offset: 3px; text-decoration: underline; }
+        a:hover { text-decoration: underline; }
+
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to My Corner of the Web</h1>
-        <p>Built with ❤️ and hosted on GitHub Pages.</p>
+        <h1>Welcome to My Site</h1>
+        <p>Built with code and hosted on GitHub Pages.</p>
     </header>
 
     <section>
         <h2>About Me</h2>
-        <p>Hi! I'm a creator exploring the world of code. This is a basic template to get a site up and running in seconds.</p>
-        
-        <h2>Project Links</h2>
+        <p>My name is Austin Cope, I'm currently an Electrical Engineering Major at Brigham Young University Idaho and this webiste is built to show you the projects that I have been working on!</p>
+    </section>
+
+    <section>
+        <h2>Latest Project</h2>
+        <p>Check out my Final project for my ECEN 101 class:</p>
+
+        <div class="short-container">
+            <iframe 
+                src="https://www.youtube.com/shorts/O-aEz3II0jc" 
+                title="Memory Game on Arduino" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="coming-soon">
+            <h3>More projects coming soon...</h3>
+            <p>I'm currently working on a sonar detector to measure the level of dishes in my sink. Check back later!</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Links</h2>
         <ul>
-            <li><a href="https://github.com/your-username">My GitHub Profile</a></li>
-            <li><a href="#">My Portfolio</a></li>
-            <li><a href="#">Contact Me</a></li>
+            <li><a href="https://github.com/BlueCheerio">Follow me on GitHub</a></li>
+            <li><a href="mailto:atcope03@gmail.com?subject=We have a job to offer you">Contact Me</a></li>
         </ul>
     </section>
 
