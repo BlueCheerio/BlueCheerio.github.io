@@ -3,124 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | GitHub Pages</title>
+    <title>atcope03 | Electrical Engineering Portfolio</title>
     <style>
-        /* General Layout */
+        :root {
+            --primary-blue: #005a9c; /* Engineering Blue */
+            --light-blue-bg: #f0f7ff;
+            --accent-blue: #e1effe;
+            --text-dark: #1a202c;
+            --border-color: #cbd5e0;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: var(--text-dark);
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
-            background-color: #f6f8fa;
+            background-color: var(--light-blue-bg);
         }
 
         header {
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #005a9c 0%, #007ace 100%);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        h1 { color: #24292f; margin-bottom: 0.5rem; }
-        h2 { color: #24292f; border-bottom: 1px solid #d0d7de; padding-bottom: 0.5rem; }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        header p { opacity: 0.9; font-weight: 300; margin-top: 0.5rem; }
 
         section {
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        /* YouTube Short Container (9:16 Ratio) */
-        .short-container {
-            max-width: 280px; /* Limits width for vertical video */
-            margin: 1.5rem auto; /* Centers the video */
-            position: relative;
-            padding-bottom: 177.77%; /* The secret sauce for 9:16 aspect ratio */
-            height: 0;
-            overflow: hidden;
+            padding: 2.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
         }
 
-        .short-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        h2 { 
+            color: var(--primary-blue); 
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
         }
 
-        /* Coming Soon Section */
-        .coming-soon {
-            margin-top: 2rem;
-            padding: 2rem;
-            border: 2px dashed #d0d7de;
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .skill-category h3 { font-size: 1.1rem; color: #4a5568; margin-bottom: 0.5rem; }
+        .skill-tag {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--primary-blue);
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin: 0.2rem;
+            font-weight: 600;
+        }
+
+        /* Project Styling */
+        .project-card {
+            background: #f8fafc;
+            border-left: 5px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .video-link-box {
+            background: var(--accent-blue);
+            padding: 1rem;
             border-radius: 8px;
             text-align: center;
-            background-color: #fafafa;
+            margin: 1rem 0;
         }
 
-        .coming-soon h3 {
-            margin-top: 0;
-            color: #8c959f;
-            font-weight: 500;
+        /* Contact & Buttons */
+        .contact-info {
+            list-style: none;
+            padding: 0;
         }
 
-        .coming-soon p {
-            color: #6e7781;
-            font-size: 0.9rem;
-            margin-bottom: 0;
+        .contact-info li { margin-bottom: 0.8rem; }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 1rem;
         }
 
-        /* Links */
-        a { color: #0969da; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        .btn:hover { background: #004477; }
 
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.5rem; }
+        .coming-soon {
+            border: 2px dashed var(--border-color);
+            padding: 1.5rem;
+            text-align: center;
+            color: #718096;
+            border-radius: 8px;
+        }
 
+        @media (max-width: 600px) {
+            .skills-container { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to My Site</h1>
-        <p>Built with code and hosted on GitHub Pages.</p>
+        <h1>atcope03</h1>
+        <p>Electrical Engineering Student | BYU-Idaho</p>
+        <a href="Resume.pdf" class="btn" target="_blank">Download Resume (PDF)</a>
     </header>
 
     <section>
-        <h2>About Me</h2>
-        <p>My name is Austin Cope, I'm currently an Electrical Engineering Major at Brigham Young University Idaho and this webiste is built to show you the projects that I have been working on!</p>
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Software</h3>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">LTSpice</span>
+                <span class="skill-tag">ARM Assembly</span>
+            </div>
+            <div class="skill-category">
+                <h3>Hardware</h3>
+                <span class="skill-tag">Multimeters</span>
+                <span class="skill-tag">Soldering</span>
+                <span class="skill-tag">Breadboarding</span>
+                <span class="skill-tag">Arduino Architecture</span>
+            </div>
+        </div>
     </section>
 
     <section>
-        <h2>Latest Project</h2>
-        <p>Check out my Final project for my ECEN 101 class:</p>
-
-        <div class="short-container">
-            <iframe 
-                src="https://www.youtube.com/shorts/O-aEz3II0jc" 
-                title="Memory Game on Arduino" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-            </iframe>
+        <h2>Featured Project</h2>
+        <div class="project-card">
+            <h3>Arduino Memory Game (ECEN 101)</h3>
+            <p>Designed and built a hardware-based memory game using an Arduino microcontroller. The system utilizes a <strong>random seed generator</strong> to determine the lighting sequence, which is stored in a dynamic <strong>array</strong>. The logic then performs a real-time comparison between the stored array and user input via button presses to determine a win or loss state.</p>
+            
+            <div class="video-link-box">
+                <strong>Project Demo:</strong> <br>
+                <a href="https://youtube.com/shorts/O-aEz3II0jc?si=l-FhLOcGN6gsWAsM" target="_blank">View Video on YouTube Shorts →</a>
+            </div>
         </div>
 
         <div class="coming-soon">
-            <h3>More projects coming soon...</h3>
-            <p>I'm currently working on a sonar detector to measure the level of dishes in my sink. Check back later!</p>
+            <p><em>More engineering projects coming soon...</em></p>
         </div>
     </section>
 
     <section>
-        <h2>Links</h2>
-        <ul>
-            <li><a href="https://github.com/BlueCheerio">Follow me on GitHub</a></li>
-            <li><a href="mailto:atcope03@gmail.com?subject=We have a job to offer you">Contact Me</a></li>
+        <h2>Contact Information</h2>
+        <ul class="contact-info">
+            <li><strong>Email:</strong> <a href="mailto:atcope03@gmail.com">atcope03@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+17202200025">720-220-0025</a></li>
+            <li><strong>Location:</strong> Rexburg, ID</li>
         </ul>
+        <p>Feel free to reach out for collaborations or project inquiries!</p>
     </section>
 
 </body>
