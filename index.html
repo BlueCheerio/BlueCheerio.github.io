@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austin Cope | Electrical Engineering Portfolio</title>
+    <title>atcope03 | Electrical Engineering Portfolio</title>
     <style>
         :root {
-            --primary-blue: #005a9c; /* Engineering Blue */
+            --primary-blue: #005a9c; 
             --light-blue-bg: #f0f7ff;
             --accent-blue: #e1effe;
             --text-dark: #1a202c;
             --border-color: #cbd5e0;
+            --white: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
             background-color: var(--light-blue-bg);
@@ -25,7 +26,7 @@
 
         header {
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
             background: linear-gradient(135deg, #005a9c 0%, #007ace 100%);
             color: white;
             border-radius: 12px;
@@ -33,12 +34,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-        header p { opacity: 0.9; font-weight: 300; margin-top: 0.5rem; }
-
+        header h1 { margin: 0; font-size: 2.5rem; }
+        
         section {
-            background: white;
-            padding: 2.5rem;
+            background: var(--white);
+            padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
@@ -50,18 +50,15 @@
             border-bottom: 2px solid var(--accent-blue);
             padding-bottom: 0.5rem;
             margin-top: 0;
-            display: flex;
-            align-items: center;
         }
 
         /* Skills Grid */
         .skills-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
 
-        .skill-category h3 { font-size: 1.1rem; color: #4a5568; margin-bottom: 0.5rem; }
         .skill-tag {
             display: inline-block;
             background: var(--accent-blue);
@@ -73,110 +70,129 @@
             font-weight: 600;
         }
 
-        /* Project Styling */
+        /* Project Cards */
         .project-card {
             background: #f8fafc;
-            border-left: 5px solid var(--primary-blue);
+            border-top: 4px solid var(--primary-blue);
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 8px 8px;
         }
 
-        .video-link-box {
-            background: var(--accent-blue);
-            padding: 1rem;
+        .project-card h3 { margin-top: 0; color: var(--primary-blue); }
+
+        /* Video Embed Styling */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
             border-radius: 8px;
-            text-align: center;
             margin: 1rem 0;
+            background: #000;
         }
 
-        /* Contact & Buttons */
-        .contact-info {
-            list-style: none;
-            padding: 0;
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        .contact-info li { margin-bottom: 0.8rem; }
-        
+        /* Buttons & Links */
         .btn {
             display: inline-block;
             background: var(--primary-blue);
             color: white !important;
-            padding: 0.8rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.3s;
-            margin-top: 1rem;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
 
-        .btn:hover { background: #004477; }
+        .btn:hover { background: #004477; transform: translateY(-1px); }
 
-        .coming-soon {
-            border: 2px dashed var(--border-color);
-            padding: 1.5rem;
-            text-align: center;
-            color: #718096;
-            border-radius: 8px;
+        .secondary-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
         }
+
+        .secondary-link:hover { text-decoration: underline; }
 
         @media (max-width: 600px) {
-            .skills-container { grid-template-columns: 1fr; }
+            body { padding: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Austin Cope</h1>
+        <h1>atcope03</h1>
         <p>Electrical Engineering Student | BYU-Idaho</p>
-        <a href="Resume.pdf" class="btn" target="_blank">Download Resume (PDF)</a>
+        <a href="Resume.pdf" class="btn" target="_blank" style="margin-top:15px; background:#fff; color:var(--primary-blue) !important;">Download Resume (PDF)</a>
     </header>
 
     <section>
         <h2>Technical Skills</h2>
         <div class="skills-container">
-            <div class="skill-category">
+            <div>
                 <h3>Software</h3>
                 <span class="skill-tag">Python</span>
-                <span class="skill-tag">C#</span>
+                <span class="skill-tag">C# / .NET</span>
                 <span class="skill-tag">LTSpice</span>
                 <span class="skill-tag">ARM Assembly</span>
             </div>
-            <div class="skill-category">
+            <div>
                 <h3>Hardware</h3>
+                <span class="skill-tag">STM32 Microprocessors</span>
                 <span class="skill-tag">Multimeters</span>
                 <span class="skill-tag">Soldering</span>
-                <span class="skill-tag">Arduino Architecture</span>
-                <span class="skill-tag">STM32 Architecture</span>
+                <span class="skill-tag">I2C & Timer Protocols</span>
             </div>
         </div>
     </section>
 
     <section>
-        <h2>Featured Project</h2>
+        <h2>Engineering Projects</h2>
+
         <div class="project-card">
-            <h3>Arduino Memory Game (ECEN 101)</h3>
-            <p>Designed and built a hardware-based memory game using an Arduino microcontroller. The system utilizes a <strong>random seed generator</strong> to determine the lighting sequence, which is stored in an <strong>array</strong>. The logic then performs a comparison between the stored array and user input to determine if the user is winning or losing.</p>
+            <h3>Sonar Dish Sensor (STM32L476-RG)</h3>
+            <p>An embedded systems project utilizing an <strong>STM32L476-RG microprocessor</strong>. This system integrates an ultrasonic sensor via <strong>Input Capture and Timers</strong> to measure distance accurately. Data is transmitted to an LCD screen using the <strong>I2C communication protocol</strong>, with a buzzer for proximity alerts.</p>
             
-            <div class="video-link-box">
-                <strong>Project Demo:</strong> <br>
-                <a href="https://www.youtube.com/shorts/Z2sDzMiQkWg" target="_blank">View Video on YouTube Shorts →</a>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/BNusiXIsBl8" frameborder="0" allowfullscreen></iframe>
             </div>
+            <a href="https://youtu.be/X0orrG7tAk4" class="secondary-link" target="_blank">🔗 View Technical Code Explanation Video →</a>
         </div>
 
-        <div class="coming-soon">
-            <p><em>More engineering projects coming soon...</em></p>
+        <div class="project-card">
+            <h3>Investment Simulator (C# / WinForms)</h3>
+            <p>A financial education tool developed in VS Code using <strong>C# and WinForms</strong>. This simulator focuses on <strong>abstraction and polymorphism</strong> to model various investment types, helping users understand risk and asset allocation.</p>
+            
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dqho3ReDAXI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="https://github.com/BlueCheerio/Investment-Simulator" class="btn" target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Arduino Memory Game (ECEN 101)</h3>
+            <p>Hardware-based memory game using a <strong>random seed generator</strong> to store light sequences in an <strong>array</strong>, comparing hardware button inputs to the stored values.</p>
+            <a href="https://youtube.com/shorts/O-aEz3II0jc?si=l-FhLOcGN6gsWAsM" class="secondary-link" target="_blank">🔗 View Project Demo (YouTube Shorts) →</a>
         </div>
     </section>
 
     <section>
         <h2>Contact Information</h2>
-        <ul class="contact-info">
-            <li><strong>Email:</strong> <a href="mailto:atcope03@gmail.com">atcope03@gmail.com</a></li>
-            <li><strong>Phone:</strong> <a href="tel:+17202200025">720-220-0025</a></li>
-            <li><strong>Location:</strong> Rexburg, ID</li>
-        </ul>
-        <p>Feel free to reach out for collaborations or project inquiries!</p>
+        <p><strong>Email:</strong> <a href="mailto:atcope03@gmail.com">atcope03@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+17202200025">720-220-0025</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/BlueCheerio">github.com/BlueCheerio</a></p>
     </section>
 
 </body>
